@@ -1,14 +1,8 @@
 <ul>
     <li *ngFor="let user of userList"> 
-        {{user.firstName}} {{user.lastName}}
-        <p *ngIf="user.developer">
-            Developer
-        </p>
-        <ul>
-            <li *ngFor="let hobby of user.hobbies">
-                {{hobby}}
-            </li>
-        </ul>
+        <p>First name: {{user.firstName}} </p>
+        <p>Last name:{{user.lastName}}</p>
+        <p>Username: {{user.userName}}</p>
     </li>
 </ul>
 

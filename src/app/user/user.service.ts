@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,5 +22,10 @@ export class UserService {
     developer : true,
     hobbies : ['program']
   }]
-  constructor() { }
+  constructor( private _http:HttpClient ) { }
+
+  getUsers(){
+    return this._http.get( 'http://localhost:8181/api/users/' );
+  }
+
 }

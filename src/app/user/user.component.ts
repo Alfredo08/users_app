@@ -12,7 +12,16 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("Before loading users:", this.userList );
-    this.userList = this._userService.userList;
+    let observable = this._userService.getUsers();
+
+    observable.subscribe( 
+      (data:any) => {
+        this.userList = data;
+      },
+      (error:any) => {
+        console.log("My own error message", error );
+      });
+
     console.log("After loading the users:", this.userList );
   }
 

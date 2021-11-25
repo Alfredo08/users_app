@@ -14,13 +14,12 @@ export class ImagesComponent implements OnInit {
     let observable = this._dogImagesService.getDogImages();
 
     observable
-    .subscribe( (data:any) => {
-      console.log("Images component!:", data.message );
-      
-      let images: any[] = data.message;
-      this.dogImages = data.message;
-      console.log( this.dogImages );
-    });
+      .subscribe( (data:any) => {
+        console.log("Images component!:", data.message );
+        
+        this.dogImages = data.message;
+        console.log( this.dogImages );
+      });
   }
 
 }
